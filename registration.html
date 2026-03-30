@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fitness Registration Form</title>
+</head>
+<body>
+
+<h1>Fitness Registration</h1>
+
+<form>
+
+    <!-- Name -->
+    <label>Name:</label>
+    <input type="text" name="name" required><br><br>
+
+    <!-- Age -->
+    <label>Age:</label>
+    <input type="number" name="age" min="16" required><br><br>
+
+    <!-- Gender -->
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="Male" required> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <br><br>
+
+    <!-- Fitness Goal -->
+    <label>Fitness Goal:</label>
+    <select required>
+        <option value="">Select</option>
+        <option>Weight Loss</option>
+        <option>Muscle Gain</option>
+        <option>Flexibility</option>
+    </select>
+    <br><br>
+
+    <!-- Workout Time -->
+    <label>Preferred Workout Time:</label>
+    <input type="time" required>
+    <br><br>
+
+    <!-- Agreement -->
+    <input type="checkbox" required> I agree to
