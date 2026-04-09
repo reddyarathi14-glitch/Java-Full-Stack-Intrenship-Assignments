@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+}
+
+.sidebar {
+  background: #ddd;
+  padding: 20px;
+}
+
+.blog {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+img {
+  width: 100%;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header style="background:black;color:white;padding:10px;">
+  Blog Page
+</header>
+
+<div class="container">
+  <div class="sidebar">
+    <h3>Categories</h3>
+    <p>Tech</p>
+    <p>News</p>
+  </div>
+
+  <div class="blog">
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Blog Title</h3>
+      <p>Description here...</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Blog Title</h3>
+      <p>Description here...</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

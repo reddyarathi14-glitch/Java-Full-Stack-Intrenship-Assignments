@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f2f2f2;
+  margin: 0;
+}
+
+.form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+}
+
+h2 {
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Focus effect */
+input:focus {
+  border-color: blue;
+  outline: none;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 10px;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Hover */
+button:hover {
+  background: darkblue;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .form-container {
+    width: 100%;
+    margin: 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="form-container">
+  <h2>Register</h2>
+  <input type="text" placeholder="Name">
+  <input type="email" placeholder="Email">
+  <input type="password" placeholder="Password">
+  <input type="password" placeholder="Confirm Password">
+  <button>Submit</button>
+</div>
+</body>
+</html>

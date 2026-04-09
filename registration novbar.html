@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { margin:0; font-family:Arial; }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: black;
+  color: white;
+  padding: 10px;
+}
+
+.menu a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  position: relative;
+}
+
+/* Hover underline */
+.menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: yellow;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 100px;
+  background: lightblue;
+}
+
+button {
+  padding: 10px;
+}
+
+/* Responsive */
+@media(max-width:600px){
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <h2>Logo</h2>
+  <div class="menu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+<div class="hero">
+  <h1>Welcome</h1>
+  <button>Get Started</button>
+</div>
+
+</body>
+</html>

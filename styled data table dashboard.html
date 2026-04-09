@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+/* Sidebar */
+.sidebar {
+  background: gray;
+  color: white;
+  padding: 20px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Alternate rows */
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* Hover */
+tr:hover {
+  background: lightblue;
+}
+
+/* Responsive */
+.table-container {
+  overflow-x: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="sidebar">Menu</div>
+
+  <div class="table-container">
+    <table>
+      <tr><th>ID</th><th>Name</th><th>Age</th></tr>
+      <tr><td>1</td><td>A</td><td>20</td></tr>
+      <tr><td>2</td><td>B</td><td>21</td></tr>
+      <tr><td>3</td><td>C</td><td>22</td></tr>
+      <tr><td>4</td><td>D</td><td>23</td></tr>
+      <tr><td>5</td><td>E</td><td>24</td></tr>
+      <tr><td>6</td><td>F</td><td>25</td></tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
