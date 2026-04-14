@@ -1,21 +1,15 @@
-class Person {
-  constructor(name) {
-    this.name = name;
+class Animal {
+  eat() {
+    console.log("Animal eats food");
   }
 }
 
-class Student extends Person {
-  constructor(name, marks) {
-    super(name); // call parent constructor
-    this.marks = marks;
-  }
-
-  showDetails() {
-    console.log(`Name: ${this.name}, Marks: ${this.marks}`);
+class Dog extends Animal {
+  eat() {
+    super.eat(); // call parent method
+    console.log("Dog eats bones");
   }
 }
 
-const s1 = new Student("John", 90);
-s1.showDetails();
-
-
+const d = new Dog();
+d.eat();
