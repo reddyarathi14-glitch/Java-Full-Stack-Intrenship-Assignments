@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz App</title>
+</head>
+<body>
+
+<h2>Quiz App</h2>
+<div id="quiz"></div>
+<button onclick="submitQuiz()">Submit</button>
+
+<h3 id="result"></h3>
+
+<script>
+let questionsData = [];
+
+// Fetch questions from backend
+fetch("http://localhost:5000/questions")
+  .then(res => res.json())
+  .then(data => {
+    questionsData = data;
+    displayQuestions();
+  });
+
+function displayQuestions() {
+  const quizDiv = document.getElementById("quiz");
+
+  questionsData.forEach(q => {
+    let html = `<p>${q.question}</p>`;
+
+    q.options.forEach(opt => {
+      html += `
+        <input type="radio" name="${q.id}" value="${opt}">
+        ${opt}<br>
+      `;
+    });
+
+    quizDiv.innerHTML += html;
+  });
+}
+
+// Submit answers
+function submitQuiz() {
+  let answers = {};
+
+  questionsData.forEach(q => {
+    const selected = document.querySelector(`input[name="${q.id}"]:checked`);
+    if (selected) {
+      answers[q.id] = selected.value;
+    }
+  });
+
+  fetch("http://localhost:5000/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(answers)
+  })
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("result").innerText =
+      `Score: ${data.score} / ${data.total}`;
+  });
+}
+</script>
+
+</body>
+</html>
